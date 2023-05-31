@@ -1,8 +1,4 @@
 const mongoose = require ('mongoose');
-const dotenv = require('dotenv');
-
-// Cargo mi fichero de entorno.
-dotenv.config();
 
 // indico la cadena de conexion a la BBDD.
 const DB_URL = process.env.DB_URL;

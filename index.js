@@ -1,10 +1,16 @@
+const dotenv = require('dotenv');
+// Cargo mi fichero de entorno.
+dotenv.config();
+
 const express = require('express');
+
 const {connect} = require('./src/utils/db');
 const moviesRoutes = require('./src/api/routes/movies.route');
 const cinemasRoutes = require('./src/api/routes/cinemas.route');
 
 // defino puerto y genero el servidor http
-const PORT = 5201;
+const PORT = process.env.PORT;
+
 const app = express();
 
 //Me conecto a BBDd.

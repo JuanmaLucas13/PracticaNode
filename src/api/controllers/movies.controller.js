@@ -74,6 +74,11 @@ const postMovies = async (req, res) => {
    try {
       const newMovie = new Movie(req.body);
 
+      if (req.file)
+      {
+         newMovie.imagen = req.file.path;
+      }
+      
       //el metodo save nos sirve para guardar un elemento en BBDD
       const createdMovie = await newMovie.save();  
 

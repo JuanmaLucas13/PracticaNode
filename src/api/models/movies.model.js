@@ -8,6 +8,7 @@ const movieSchema = new Schema(
     director: {type: String, require: true},
     year: {type: Number, require: true},
     genre: {type: String, require: true},
+    imagen: {type: String}
    },
    {
     timestamps: true

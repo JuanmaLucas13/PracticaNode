@@ -49,11 +49,11 @@ const arrayMovies = [
        console.log('Peliculas borradas')
     }   
 } )
-.catch ( (error) => {'Error borrando peliculas ', error} )
+.catch ( (error) => console.log("error borrando peliculas", error))
 .then ( async () => {
      const movieMap = arrayMovies.map((pelicula) => new Movie(pelicula));
      await Movie.insertMany(movieMap);
      console.log ('Peliculas insertadas');
 })
-.catch( (error) => {'Error insertando peliculas ', error} )
+.catch( (error) => console.log("error insertando peliculas", error))
 .finally ( () => mongoose.disconnect())

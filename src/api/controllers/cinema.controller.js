@@ -2,8 +2,9 @@ const Cinema = require('../models/cinema.model');
 
 const getCinema = async (req, res) => {
     try {
-        // const allCinemas = await Cinema.find().populate("movies");
-        const allCinemas = await Cinema.find().populate({path: 'movies', select: 'title director'});
+        const allCinemas = await Cinema.find().populate("peliculas", "title director");
+        // const allCinemas = await Cinema.find().populate({path: 'movies', select: 'title director'});
+        // const allCinemas = await Cinema.find()
         if (allCinemas.length == 0)
            return res.status(404).json({message:"No hay cines informados."});   
       

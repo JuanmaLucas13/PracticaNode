@@ -6,7 +6,7 @@ const cinemaSchema = new Schema (
    {
      name: {type: String, required: true},
      location: {type: String, required: true},
-     movies: [{type: Schema.Types.ObjectId, ref: 'movies'} ]
+     peliculas: [{type: Schema.Types.ObjectId, ref: 'movies'} ]
    },
    {
     timestamps: true
